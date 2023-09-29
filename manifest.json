@@ -15,12 +15,5 @@
     }
   },
   "version": "1.0.0",
-  "frameworkVersion": "2.0",
-  "parameters": [
-    {
-      "name": "baseUrl",
-      "type": "text",
-      "default": "https://YYY.YYYY.com.br"
-    }
-  ]
+  "frameworkVersion": "2.0"
 }
