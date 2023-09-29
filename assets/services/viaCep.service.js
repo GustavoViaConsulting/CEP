@@ -4,7 +4,6 @@
   consultarCep.service("viaCep", [
     "$q",
     function ($q) {
-      var client = ZAFClient.init();
       return {
         consultarCep: function (cep) {
           var url = "https://viacep.com.br/ws/" + cep + "/json/";
@@ -14,12 +13,11 @@
             type: "GET",
             contentType: "application/json",
           };
-          client
-            .request(options)
-            .then(function (data) {
+          $.ajax(options)
+            .done(function (data) {
               deferred.resolve(data);
             })
-            .catch(function (error) {
+            .fail(function (error) {
               deferred.reject(error);
             });
           return deferred.promise;
