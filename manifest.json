@@ -1,0 +1,26 @@
+{
+  "name": "CEP",
+  "author": {
+    "name": "Via Consulting",
+    "email": "gustavo.alves@viaconsulting.com.br"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "ticket_sidebar": {
+        "url": "assets/views/consultarCep.html",
+        "flexible": true
+      }
+    }
+  },
+  "version": "1.0.0",
+  "frameworkVersion": "2.0",
+  "parameters": [
+    {
+      "name": "baseUrl",
+      "type": "text",
+      "default": "https://YYY.YYYY.com.br"
+    }
+  ]
+}
