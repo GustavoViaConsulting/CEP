@@ -4,20 +4,23 @@
   consultarCep.service("viaCep", [
     "$q",
     function ($q) {
+      var cliente = ZAFClient.init();
+
       return {
-        consultarCep: function (cep) {
-          var url = "https://viacep.com.br/ws/" + cep + "/json/";
+        consultarCep: function (url, cep) {
+          var fullUrl = url.replace("{{CEP}}", cep);
           var deferred = $q.defer();
           let options = {
-            url: url,
+            url: fullUrl,
             type: "GET",
             contentType: "application/json",
           };
-          $.ajax(options)
-            .done(function (data) {
+          cliente
+            .request(options)
+            .then(function (data) {
               deferred.resolve(data);
             })
-            .fail(function (error) {
+            .catch(function (error) {
               deferred.reject(error);
             });
           return deferred.promise;
