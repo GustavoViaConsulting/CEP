@@ -15,5 +15,12 @@
     }
   },
   "version": "1.0.0",
-  "frameworkVersion": "2.0"
+  "frameworkVersion": "2.0",
+  "parameters": [
+    {
+      "name": "url",
+      "type": "text",
+      "default": "https://YYY.YYYY.com.br"
+    }
+  ]
 }
